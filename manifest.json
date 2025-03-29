@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "name": "Year Countdown & Quote Tab",
+    "version": "1.0",
+    "description": "Displays days left in the year and a motivating quote on the new tab page.",
+    "chrome_url_overrides": {
+      "newtab": "newtab.html"
+    }
+}

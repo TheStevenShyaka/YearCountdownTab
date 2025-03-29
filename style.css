@@ -1,0 +1,134 @@
+/* Clean, Modern Dark UI Design */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Syne:wght@400..800&display=swap');
+
+:root {
+  --primary-color: #61dafb;    /* Vibrant blue */
+  --text-color: #f0f0f0;       /* Light text */
+  --dark-bg: #282c34;          /* Dark background */
+  --accent-color: #404756;     /* Lighter accent for dark mode */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Syne Variable', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.container {
+  padding: 2.5rem;
+  max-width: 800px;
+  border-radius: 1.2rem;
+  background-color: rgba(30, 34, 42, 0.7);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.countdown-display {
+  font-family: 'Anton', sans-serif;
+  font-size: 10em;
+  font-weight: normal;
+  color: var(--primary-color);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.countdown-display::after {
+  content: '';
+  display: none;
+}
+
+.quote-container {
+  background-color: #121212; /* Very dark background like in the image */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  border-left: 4px solid #1e90ff; /* Blue accent line similar to the image */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add the blue accent line on the left similar to the image */
+.quote-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #1e90ff, #61dafb);
+  border-radius: 4px;
+}
+
+.quote-display {
+  font-family: 'Syne Variable', sans-serif;
+  font-size: 1.8em;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #e0e0e0;
+  max-width: 700px;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-left: none; /* Remove the existing border as we've added it to the container */
+  text-align: left;
+}
+
+.quote-author {
+  display: block;
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .countdown-display {
+    font-size: 8em;
+  }
+  
+  .quote-display {
+    font-size: 1.5em;
+    padding: 0.5rem 1rem;
+  }
+  
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-display {
+    font-size: 6em;
+  }
+  
+  .countdown-display::after {
+    font-size: 1.2rem;
+  }
+  
+  .quote-display {
+    font-size: 1.3em;
+  }
+}
